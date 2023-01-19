@@ -6,6 +6,9 @@
             <label for="name">Name:</label>
             <!-- what attribute lets you add text to a text input? -->
             <input type="text" id="name" name="user_name">
+            <?php if (isset($errors['user_name'])) : ?>
+                <p class="error"><?= $errors['user_name'] ?></p>
+            <?php endif; ?>
         </li>
         <li>
             <label for="password">Password:</label>
