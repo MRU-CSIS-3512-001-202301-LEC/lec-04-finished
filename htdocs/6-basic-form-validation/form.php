@@ -25,9 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
 } else if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $errors = [];
     // validate length with strlen
+    if (strlen($_POST['user_name']) === 0) {
+        $errors['user_name'] = "A user name is required.";
+    }
 
     // if (empty($errors))
     //   everything ok, so go where you want to go
     // else
     //   there are errors, so go back to your form
+    if (empty($errors)) {
+        require 'views/form-results.view.php';
+    } else {
+        require 'views/form.view.php';
+    }
 }
