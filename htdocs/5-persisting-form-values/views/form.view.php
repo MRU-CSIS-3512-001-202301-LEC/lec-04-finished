@@ -5,7 +5,7 @@
         <li>
             <label for="name">Name:</label>
             <!-- what attribute lets you add text to a text input? -->
-            <input type="text" id="name" name="user_name">
+            <input type="text" id="name" name="user_name" value="<?= $_POST['user_name'] ?? "" ?> ">
         </li>
         <li>
             <label for="password">Password:</label>
